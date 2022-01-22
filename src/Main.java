@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Main {
 
@@ -20,7 +22,23 @@ public class Main {
            boolean isIndexCorrect
            white(!isIndexCorrect) {}
         */
+        Scanner scanner = new Scanner(System.in);
+        int [] tab = new int[6];
 
+        while (true) {
+            try {
+                tab[scanner.nextInt()] = scanner.nextInt();
+            } catch (ArrayIndexOutOfBoundsException ex) {
+                System.out.println("Zły indeks");
+                continue;
+            } catch (InputMismatchException ex) {
+                System.out.println("Nie liczba");
+                scanner = new Scanner(System.in);
+                continue;
+            }
+
+            return;
+        }
 
 
         /* zad.2
@@ -29,5 +47,23 @@ public class Main {
         c) stworzyć dowolny przykład z 2 lub 3 blokami catch i z blokiem finally,
          */
 
+//        a)
+        String str = null;
+        str.split("");
+
+//        b)
+        System.out.println(53 / 0);
+
+//        c)
+        int [] arr;
+        try {
+            arr = new int[999999999];
+        } catch (ExceptionInInitializerError ex) {
+            System.out.println("bad");
+        } catch (ArrayStoreException ex) {
+            System.out.println("hello");
+        } finally {
+            arr = new int[10];
+        }
     }
 }
