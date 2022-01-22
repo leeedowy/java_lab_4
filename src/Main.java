@@ -14,5 +14,12 @@ public class Main {
         c) stworzyć objekty tych klas i wyświetlić przykładowe wyliczenia
         */
 
+        Kwadrat kwadrat = new Kwadrat();
+        System.out.println(kwadrat.area(2, 3));
+        System.out.println(kwadrat.circumference(2, 3));
+
+        Rectangle rectangle = new Rectangle();
+        System.out.println(rectangle.area(5, 6));
+        System.out.println(rectangle.circumference(94, 3));
     }
 }
